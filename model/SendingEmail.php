@@ -100,13 +100,13 @@ public static function sendActivationEmail($email,$activationToken){
         //getting review details
         $review = new Reviews_db();
         $reportedReview = $review->getReviewById($reviewid);
-        $reviewTitle = $reportedReview['title'];
+        $reviewTitle = $reportedReview['reviewtitle'];
         $reviewDesc = $reportedReview['reviewdescription'];
         $mail->Body ='<h2>Your Account has been deactivated</h2>
                             <p>following is the information regarding your account Deactivation<br>
                             <span>You posted a review that was reported<br>
-                            abuse by the salon owner and for that we are taking this action and also deleting review</span>
-                            <span>Details are attached as follow</span>
+                            abuse by the salon owner and for that we are taking this action and also deleting review.</span><br>
+                            <span>Details are attached as follow</span><br>
                             <strong>title</strong>'.$reviewTitle.'<br>
                             <strong>Description</strong>'.$reviewDesc.'<br>
                             <hr style="size: 20px;width: 80%">

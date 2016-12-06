@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
     $.getJSON({
-        url: "http://localhost:8080/Project/MyCutMyTime/data.php",
+        url: "http://localhost/Project/MyCutMyTime_PHPProject/data.php",
         method: "GET",
         success: function(data) {
             console.log(data);

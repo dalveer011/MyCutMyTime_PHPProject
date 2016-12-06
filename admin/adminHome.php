@@ -74,8 +74,8 @@ $listOfsalonOwners = $admin->getAllSalonOwners();
                         <td class="email"><?php echo $customer['email'] ?></td>
                         <td><?php echo $admin->getAccountStatus($customer['email']) ?></td>
                         <td><a href="TakingActions.php?action=activate&email=<?php echo $customer['email']?>" class="btn btn-success">Activate</a>
-                        <td><a href="TakingActions.php?action=deactivate&email=<?php echo $customer['email']?>" class="btn btn-success">Deactivate</a>
-                        <td><a href="TakingActions.php?action=delete&email=<?php echo $customer['email']?>" class="btn btn-success">Delete</a>
+                        <td><a href="TakingActions.php?action=deactivate&email=<?php echo $customer['email']?>" class="btn btn-warning">Deactivate</a>
+                        <td><a href="TakingActions.php?action=delete&email=<?php echo $customer['email']?>" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

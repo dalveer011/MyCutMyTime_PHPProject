@@ -55,16 +55,18 @@ $salonemail = $_SESSION['username'];
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <!--navbar right means right side in navbar where we will have all our links-->
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="SalonHome.php">Home</a></li>
+                <li><a href="SalonWelcome.php">Home</a></li>
                 <li><a href="viewReviews.php">Reviews</a></li>
-                <li><a href="graph.php">Reports</a></li>
+                <li  class="active"><a href="graph.php">Reports</a></li>
                 <li><a href="#" class="btn btn-danger" id="btnSignUp">Log Out</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
 
-<div class="container">
+<div class="container-fluid">
+    <section class="row" style="padding-left: 0px;">
+        <aside class="col-sm-2" style="padding-left: 0px;">
     <nav class="navbar navbar-inverse sidebar" role="navigation">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -80,9 +82,9 @@ $salonemail = $_SESSION['username'];
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="salonWelcome.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-                    <li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-                    <li ><a href="#">Appointments<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-bell"></span></a></li>
+                    <li class="active"><a href="./SalonWelcome.php">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                    <li ><a href="./viewProfileSalon.php">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+                    <li ><a href="./OwnerAppointment.php">Appointments<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-bell"></span></a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-star"></span></a>
                         <ul class="dropdown-menu forAnimate" role="menu">
@@ -90,8 +92,7 @@ $salonemail = $_SESSION['username'];
                             <li class="divider"></li>
                             <li><a href="AddService.php">Add Services</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Modify Services</a></li>
-
+                            <li><a href="./editService.php">Modify Services</a></li>
                         </ul>
                     </li>
                     <li><a href="viewReviews.php">Reviews<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list-alt"></span></a></li>
@@ -99,58 +100,34 @@ $salonemail = $_SESSION['username'];
             </div>
         </div>
     </nav>
-
-    <div class="main">
+            </aside>
+        <div class="col-sm-6 col-sm-offset-4 main">
         <div id="chart-container">
             <canvas id="mycanvas"></canvas>
         </div>
-
+            </div>
+        </section>
         <section class="row">
-            <footer class="col-xs-12">
+            <footer>
                 <h5 class="text-center">&copy;&nbsp;Esac Inc. All Rights Reserved 2016</h5>
             </footer>
         </section>
+    <div class="modal fade" id='loginModal' tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><h4>Logout <i class="fa fa-lock"></i></h4></div>
+                <div class="modal-body"><i class="fa fa-question-circle"></i> Are you sure you want to log-off?</div>
+                <div class="modal-footer"><a href="LogOut.php" class="btn btn-primary btn-block">Logout</a></div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
     </div>
-
-
-</div>
-<div class="modal fade" id='loginModal' tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header"><h4>Logout <i class="fa fa-lock"></i></h4></div>
-            <div class="modal-body"><i class="fa fa-question-circle"></i> Are you sure you want to log-off?</div>
-            <div class="modal-footer"><a href="LogOut.php" class="btn btn-primary btn-block">Logout</a></div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div>
+    </div>
 <!--add javascript source here : first add jquery CDN then add bootstrap javascript CDN-->
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"
           integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
           crossorigin="anonymous"></script>
-
 <!--adding bootstrap javascript here-->
 <script src="js/bootstrap.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
-<!---->
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--<head>-->
-<!--    <title>ChartJS - BarGraph</title>-->
-<!--    <style type="text/css">-->
-<!--        #chart-container {-->
-<!--            width: 640px;-->
-<!--            height: auto;-->
-<!--        }-->
-<!--    </style>-->
-<!--</head>-->
-<!--<body>-->
-<!--<div id="chart-container">-->
-<!--    <canvas id="mycanvas"></canvas>-->
-<!--</div>-->
-<!---->
-<!--<!-- javascript -->-->
-
-<!--</body>-->
-<!--</html>-->

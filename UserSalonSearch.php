@@ -57,8 +57,8 @@ require_once 'model/requireClasses.php';
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reviews<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="WriteReviews.php">Write A Review</a></li>
-                        <li><a href="ViewReviews.php">View A Review</a></li>
+                        <li><a href="./writeReview.php">Write A Review</a></li>
+
                     </ul>
                 </li>
                 <li><a href="LogOut.php" class="btn btn-danger">LogOut</a></li>

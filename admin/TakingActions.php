@@ -1,5 +1,7 @@
 <?php
+
 require '../Required Packages/PHPMailer/PHPMailerAutoload.php';
+
 require_once '../model/requireClasses.php';
 require_once './AdminSession.php';
 $admin = new Admin_db();

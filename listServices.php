@@ -37,7 +37,7 @@ include_once 'header.php';
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="SalonWelcome.php">Home</a></li>
                 <li><a href="viewReviews.php">View Reviews</a></li>
-                <li><a href="#">Reports</a></li>
+                <li><a href="./graph.php">Reports</a></li>
                 <li><a href="#" class="btn btn-danger" id="btnSignUp">Log Out</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
