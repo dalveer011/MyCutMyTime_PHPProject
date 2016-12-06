@@ -20,6 +20,16 @@ class Admin_db
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function generatePassword($password,$admin)
+    {
+        $db = Database::getConnection();
+        $query = "insert into admin(admin,password) values(:admin,:password)";
+        $statement = $db->prepare($query);
+        $statement->bindValue(':admin',$admin);
+        $statement->bindValue(':password',password_hash($password,PASSWORD_BCRYPT));
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     public function getAccountStatus($email)
     {
@@ -54,6 +64,20 @@ class Admin_db
             return "No Reviews were reported";
         }
     }
+    public function authenticate($admin)
+    {
+        $db = Database::getConnection();
+        $query = "select * from admin  where admin=:admin";
+        $statement = $db->prepare($query);
+        $statement->bindValue(':admin',$admin);
+        $statement->execute();
+        if ($statement->rowCount() > 0) {
+            $result = $statement->fetch();
+            return $result['password'];
+        } else {
+            return false;
+        }
+    }
 
     public function takeAction($email, $action)
     {
@@ -82,4 +106,5 @@ class Admin_db
             $statementTwo->closeCursor();
         }
     }
+
 }
